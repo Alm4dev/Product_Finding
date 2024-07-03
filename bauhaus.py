@@ -23,7 +23,7 @@ def manomano_scrap(search_type):
    # options.add_argument('--no-sandbox')
    # options.add_argument('--disable-dev-shm-usage')
     #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
+    #service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
 
     # Create a new Chrome session
    # driver = webdriver.Chrome(service=service, options=options)
