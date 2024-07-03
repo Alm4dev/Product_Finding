@@ -1,3 +1,4 @@
+import os
 import re
 import requests
 import time
@@ -10,7 +11,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-
+driver_path = os.path.join(os.getcwd(), 'C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')
+# Initialize ChromeDriver with the path
+driver = webdriver.Chrome(executable_path=driver_path)
 # Function to extract dimensions from the description
 def manomano_scrap(search_type):
     # Set up Chrome options
