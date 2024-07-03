@@ -15,7 +15,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 options = webdriver.ChromeOptions()
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--headless')  # Run Chrome in headless mode
 
+# Initialize the Chrome driver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 def manomano_scrap(search_type):
     # Set up Chrome options
