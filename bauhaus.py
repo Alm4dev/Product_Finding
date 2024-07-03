@@ -1,4 +1,3 @@
-import os
 import re
 import requests
 import time
@@ -12,24 +11,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
-# Initialize ChromeDriver with the path
-# Fetch chromedriver path from environment variable
-driver_path = os.getenv('CHROMEDRIVER_PATH')
-
-if not driver_path or not os.path.exists(driver_path):
-    raise FileNotFoundError(f"ChromeDriver executable not found at {driver_path}")
-options = Options()
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-
-service = Service(driver_path)
 # Function to extract dimensions from the description
 def manomano_scrap(search_type):
     # Set up Chrome options
-   # options = Options()
-   # options.add_argument('--no-sandbox')
-    #options.add_argument('--disable-dev-shm-usage')
-    service = Service(driver_path)  # Update the path to your chromedriver
+    options = Options()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
 
     # Create a new Chrome session
     driver = webdriver.Chrome(service=service, options=options)
@@ -260,7 +248,7 @@ def scrape_obi_products(product_type, zip_code, radius):
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    service = Service(driver_path)  # Update the path to your chromedriver
+    service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
 
     driver = webdriver.Chrome(service=service, options=options)
     driver.maximize_window()
