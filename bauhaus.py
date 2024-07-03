@@ -10,17 +10,23 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-
+from webdriver_manager.chrome import ChromeDriverManager
 # Function to extract dimensions from the description
+options = webdriver.ChromeOptions()
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 def manomano_scrap(search_type):
     # Set up Chrome options
-    options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+   # options = Options()
+   # options.add_argument('--no-sandbox')
+   # options.add_argument('--disable-dev-shm-usage')
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
 
     # Create a new Chrome session
-    driver = webdriver.Chrome(service=service, options=options)
+   # driver = webdriver.Chrome(service=service, options=options)
 
     products_data = []
 
@@ -245,12 +251,12 @@ def extract_dimensions(description):
 # Function to scrape products from obi.de using Selenium
 
 def scrape_obi_products(product_type, zip_code, radius):
-    options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
+   # options = Options()
+   # options.add_argument('--no-sandbox')
+   # options.add_argument('--disable-dev-shm-usage')
+    #service = Service('C:/Users/Acer/Desktop/chromedriver-win64/chromedriver.exe')  # Update the path to your chromedriver
 
-    driver = webdriver.Chrome(service=service, options=options)
+   # driver = webdriver.Chrome(service=service, options=options)
     driver.maximize_window()
 
     baseurl = 'https://www.obi.de'
